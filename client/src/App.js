@@ -14,6 +14,13 @@ const App = () =>  {
     
     const [communeSelections, setCommuneSelectionsSelections] = useState([]);
     
+    const getHelloWordl =  () => {
+    fetch('http://localhost:4200/')
+      .then(response => response.json())
+      .then(response => console.log(response.data))
+      .catch(err => console.log(err))
+    }
+
     const handleSearch = (event) => {
       const form = event.currentTarget;
       if (form.checkValidity() === false) {
@@ -70,7 +77,7 @@ const App = () =>  {
         </Form.Row>
         <div class="d-flex justify-content-end">
           <Button type="submit" style={{float: 'right', margin:'1vh'}}>Rechercher</Button>
-          <p style={{float: 'right', margin:'1vh'}} class="font-weight-bold">+ Upload le pdf</p>
+          <p style={{float: 'right', margin:'1vh'}} class="font-weight-bold" onClick={getHelloWordl}>+ Upload le pdf</p>
       </div>
     </Form>
     <DataTable/>
