@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 5000;
 const SERVER = http.createServer();
 
 // Firing up the server on selected port
-SERVER.listen(PORT);
+SERVER.listen(PORT, "0.0.0.0");
 
 SERVER.on("listening", () => {
     console.log("[Server]::LISTEN:%s", PORT);
