@@ -1,19 +1,26 @@
-const http = require("http");
+const express = require('express')
+const cors = require('cors')
+const mysql = require('mysql')
 
-// Port Environment variable
-const PORT = process.env.PORT || 5000;
+const app = express()
 
-// Creating the node server
-const SERVER = http.createServer();
+const SELECT_ALL_USER_QUERY = ''
 
-// Firing up the server on selected port
-SERVER.listen(PORT, "0.0.0.0");
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'allgreen',
+    password: 'allgreen94',
+    database: 'allgreenTest'
+})
 
-SERVER.on("listening", () => {
-    console.log("[Server]::LISTEN:%s", PORT);
-});
+connection.connect(err => {
+    if(err) {
+        return err;
+    }
+})
 
-// Callback function for checking connecting or error
-SERVER.on("error", error => {
-    throw new Error(`[Server]::ERROR:${error.message}`);
-});
+app.use(cors())
+
+app.listen(4000, () => {
+    console.log('le serveur fonctionne sur le port 4000')
+})
