@@ -15,7 +15,7 @@ const App = () =>  {
     const [communeSelections, setCommuneSelectionsSelections] = useState([]);
     
     const getHelloWordl =  () => {
-    fetch('http://localhost:4200/')
+    fetch('http://vps-71135989.vps.ovh.net:4200/')
       .then(response => response.json())
       .then(response => console.log(response.data))
       .catch(err => console.log(err))
