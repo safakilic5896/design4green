@@ -121,6 +121,12 @@ const App = () =>  {
           <Button onClick = {handleSearch} style={{float: 'right', margin:'1vh'}}>Rechercher</Button>
       </div>
     </Form>
+    {Array.isArray(dataTable) && dataTable.length ? (
+      <p>Les données relatives à votre sélection {regionSelections[0] !== undefined ? regionSelections[0] + ' ' : ' '}
+        {departementSelections[0] !== undefined ? departementSelections[0] + ' ' : ' '} {communeSelections[0] !== undefined ? communeSelections[0] : ''}</p>
+    ) : (
+      <></>
+    )}
     <DataTable dataTable={dataTable}/>
     </Container>
     )

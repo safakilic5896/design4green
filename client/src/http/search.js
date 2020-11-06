@@ -3,13 +3,13 @@ export const getSearch = (region, departement, commune) => {
   var regionQ = ''
   var departementQ = ''
   var communeQ = ''
-  if (regionQ !== undefined) {
+  if (region !== undefined) {
     regionQ = region
   }
   if (departement !== undefined) {
     departementQ = departement
   }
-  if (communeQ !== undefined) {
+  if (commune !== undefined) {
     communeQ = commune
   }
   return fetch(`http://vps-71135989.vps.ovh.net:4200/search?region=${regionQ}&departement=${departementQ}&commune=${communeQ}`, 

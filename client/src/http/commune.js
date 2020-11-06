@@ -12,4 +12,4 @@ export const getCommune = (departement, region) => {
       return response
     })
     .catch(err => console.log(err))
-  }
+}

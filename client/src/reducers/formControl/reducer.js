@@ -7,7 +7,6 @@ const initialState = [{
 ]
 
 const changeInputDepartementState = (state) => {
-  console.log(state)
   return [{inputDepartement: false}, {inputCommune: true}]
 }
 
