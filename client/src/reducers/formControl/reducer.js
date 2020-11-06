@@ -1,18 +1,22 @@
 import { actionTypes } from './actions'
 
 const initialState = [{
-  inputDepartement: false,
-  inputCommune: false
-}]
+  inputDepartement: true
+  },{
+    inputCommune: true}
+]
 
 const changeInputDepartementState = (state) => {
-  return [...state, state.map((item) => item.index===0 ? item.inputDepartement=!item.inputDepartement : 
-    item.inputCommune=item.inputCommune)]
+  console.log(state)
+  return [{inputDepartement: false}, {inputCommune: true}]
 }
 
 const changeinputCommuneState = (state) => {
-  return [...state, state.map((item) => item.index===1 ? item.inputCommune=!item.inputCommune : 
-    item.inputDepartement=item.inputDepartement)]
+  return [{inputDepartement: false}, {inputCommune: false}]
+}
+
+const changeInputDepartementCommuneState = (state) => {
+  return initialState
 }
 
 export default (state = initialState, action) => {
@@ -21,6 +25,8 @@ export default (state = initialState, action) => {
       return changeInputDepartementState(state)
     case actionTypes.INPUT_COMMUNE:
       return changeinputCommuneState(state)
+    case actionTypes.INPUT_DEPARTEMENT_COMMUNE:
+      return changeInputDepartementCommuneState(state)
     default:
       return state
   }
